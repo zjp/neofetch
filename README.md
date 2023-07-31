@@ -1,3 +1,15 @@
+This is a fork of neofetch that adds support for aligning its output. The alignment can be left-aligned, where 
+each field is aligned, or right-aligned, where each label is right-justified and corresponding fields are aligned.
+
+Call with `--align_output {left|right|off}`
+
+Not merged, but called "one of the better [ways of implementing this]" in the closing comment. It works by 
+parsing the user's configuration file (or the default one if none exists) for each label, 'OS', 'Terminal',
+etc, and keeping track of the length of the longest one.
+
+The original neofetch prints the lines all in one call to printf, but this version prints the label separately
+from its info, using the length of the longest label as the label's field width. 
+
 <h3 align="center"><img src="https://i.imgur.com/ZQI2EYz.png" alt="logo" height="100px"></h3>
 <p align="center">A command-line system information tool written in bash 3.2+</p>
 
